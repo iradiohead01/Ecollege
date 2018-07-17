@@ -1,4 +1,11 @@
 # VSCode Extensions and Commands
+- [VSCode Extensions and Commands](#vscode-extensions-and-commands)
+  - [Offical docs](#offical-docs)
+  - [Basic Key Bindings](#basic-key-bindings)
+  - [Extensions](#extensions)
+    - [Markdown](#markdown)
+    - [Robot Framework](#robot-framework)
+    - [Python](#python)
 
 ## Offical docs
 
@@ -182,3 +189,75 @@ https://code.visualstudio.com/docs - VSCode
 | Ctrl+↑ / ↓        | Scroll up/down             |
 | Shift+PgUp / PgDn | Scroll page up/down        |
 | Ctrl+Home / End   | Scroll to top/bottom       |
+
+## Extensions
+
+### Markdown
+
+1. Markdown All in One
+
+* Keyboard shortcuts
+
+| Command          | Description                  |
+| ---------------- | ---------------------------- |
+| Ctrl + b         | toggle bold                  |
+| Ctrl + I         | Toggle italic                |
+| Alt + S          | Toggle strikethrough         |
+| Ctrl + Shift + ] | Toggle heading (uplevel)     |
+| Ctrl + Shift + [ | Toggle heading (downlevel)   |
+| Ctrl + M         | Toggle math environment      |
+| Alt + C          | Check/Uncheck task list item |
+
+* Available Commands
+  * Markdown: Create Table of Contents
+  * Markdown: Update Table of Contents
+  * Markdown: Toggle code span
+  * Markdown: Print current document to HTML
+
+2. markdownlint
+
+>Markdown linting and style cheking
+
+### Robot Framework
+
+1. Robot Framework Intellisense
+
+>Requires that the .py files are included with rfLanguageServer.includePaths setting. E.g.
+"rfLanguageServer.includePaths": [
+"**/*.robot",
+"**/*.py"
+]
+
+| Command      | Description                                                      |
+| ------------ | ---------------------------------------------------------------- |
+| F12          | Goto definition                                                  |
+| Ctrl + Left  | Goto definition                                                  |  |
+| Shift+F12    | Find all references                                              |
+| Ctrl+Shift+O | List file symbols(Shows variables, keywords and test cases)      |
+| Ctrl+T       | List workspace symbols(Shows variables, keywords and test cases) |
+| Ctrl+Space   | Show Code Completion Proposals                                   |
+
+2. robot framework language
+
+>User define system environment variable PY_SITE_PATH, which indicate the site package path  
+>Linux:  
+>export PY_SITE_PATH="/lib/python2.7/site-packages/"
+
+| Command     | Description     |
+| ----------- | --------------- |
+| F12         | Goto definition |
+| Ctrl + Left | Goto definition |
+
+### Python
+
+>From within VS Code, select a Python interpreter by opening the Command Palette (Ctrl+Shift+P), start typing the Python: Select Interpreter command to search, then select the command.
+
+>Formating: pip install pep8
+
+
+| Command     | Description         |
+| ----------- | ------------------- |
+| F12         | Goto definition     |
+| Ctrl + Left | Goto definition     |
+| Shift+F12   | Find all references |
+| F2          | Rename Symbol       |
