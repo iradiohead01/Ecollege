@@ -7,6 +7,7 @@ https://code.visualstudio.com/docs - VSCode
 ## Basic Key Bindings
 
 **General**
+
 | Command          | Description             |
 | ---------------- | ----------------------- |
 | Ctrl+Shift+P, F1 | Show Command Palette    |
@@ -62,6 +63,7 @@ https://code.visualstudio.com/docs - VSCode
 | Ctrl+M         | Toggle Tab moves focus          |
 
 **Search and replace**
+
 | Command       | Description                                |
 | ------------- | ------------------------------------------ |
 | Ctrl+F        | Find                                       |
