@@ -1,9 +1,11 @@
-#LTE Basics
+# LTE Basics
+
 ****
-##Basic Parameters
-* E-UTRA Operating Bands:
+## Basic Parameters
+
+* E-UTRA Operating Bands:  
 ![alt text](./e_utra.jpg "e_utra")
-* Channel Bandwidth (MHz):	
+* Channel Bandwidth (MHz):
 >* 1.4
 >* 3
 >* 5
