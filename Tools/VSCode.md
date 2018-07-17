@@ -92,6 +92,8 @@ https://code.visualstudio.com/docs - VSCode
 | Ctrl+Shift+Alt + PgUp/PgDn   | Column (box) selection page up/down         |
 
 **Rich languages editing**
+
+
 | Command          | Description                     |
 | ---------------- | ------------------------------- |
 | Ctrl+Space       | Trigger suggestion              |
