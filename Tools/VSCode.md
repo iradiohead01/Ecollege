@@ -6,6 +6,7 @@
     - [Markdown](#markdown)
     - [Robot Framework](#robot-framework)
     - [Python](#python)
+    - [PlantUML](#plantuml)
 
 ## Offical docs
 
@@ -261,3 +262,19 @@ https://code.visualstudio.com/docs - VSCode
 | Ctrl + Left | Goto definition     |
 | Shift+F12   | Find all references |
 | F2          | Rename Symbol       |
+
+### PlantUML
+> It's necessary to have following installed:  
+> * Java
+> * Graphviz(yum intall graphviz)  
+
+| Command     | Description         |
+| ----------- | ------------------- |
+| Left click | zoom in 
+| Alt + left click | zoom out 
+| Alt + D | Preview 
+|Alt + Shift + F | Format code
+
+>Basic elements
+
+![alt text](./plantUML.png "elements")

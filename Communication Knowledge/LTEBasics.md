@@ -1,6 +1,13 @@
 # LTE Basics
 
 ****
+## LTE architectural
+
+* EPS arch
+![alt text](./EPSelement.png "eps arch")
+* EPS function
+![alt text](./EPSfuntion.png "eps function")
+
 ## Basic Parameters
 
 * E-UTRA Operating Bands:  
