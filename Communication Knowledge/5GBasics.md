@@ -1,5 +1,6 @@
 # 5G Basics
 - [5G Basics](#5g-basics)
+    - [5G Arch](#5g-arch)
     - [5G frequency Bands](#5g-frequency-bands)
         - [Lower 5G Bands in sub 6GHz](#lower-5g-bands-in-sub-6ghz)
         - [Higher 5G Frequency Bands in mmwave](#higher-5g-frequency-bands-in-mmwave)
@@ -11,6 +12,39 @@
         - [NR frame](#nr-frame)
     - [Physical layer](#physical-layer)
         - [Physical layer procedure](#physical-layer-procedure)
+
+
+## 5G Arch
+
+```plant-uml
+@startuml
+node gNB {
+    node CU {
+        node "CU-C"
+        node RRC
+        node "CU-M"
+        node "CU-U"
+    }
+    node DU
+    node RU
+    RRC .- DU: Fs-HL-C/F1-C
+    (CU-M) -- DU: Fs-HL-M/F1/F1-M
+    (CU-U) -- DU: Fs-HL-U/F1/F1-U
+    DU -- RU:Fs-LL
+}
+node EPC
+node eNB
+node UE
+
+UE .- EPC: NAS
+gNB .- eNB: X2
+gNB -- UE: 5G-Uu(Uplane)
+gNB .- UE: 5G-Uu(Cplane)
+(CU-C) .- EPC: S1-C/NG1
+(CU-U) -- EPC: S1-U/NG1
+@enduml
+```
+
 ## 5G frequency Bands
 
 ### Lower 5G Bands in sub 6GHz
