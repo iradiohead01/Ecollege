@@ -41,20 +41,20 @@
 
 ### Transmission bandwidth configuration NRB for FR1(below 6 GHz)
 
-SCS [kHz] |5 MHz|	10 MHz|	15 MHz|	20 MHz|	25 MHz	|30 MHz | 40 MHz|	50 MHz	|60 MHz	|70 MHz|	80 MHz|	90 MHz|	100 MHz
--|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
-|	|NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |	NRB |
-15|	25	|52	|79	|106	|133	|160	|216	|270	|N.A	|N.A	|N.A	|N.A	|N.A|
-30|	11	|24	|38|	51|	65|	78	|106	|133	|162	|189	|217	|245	|273|
-60|	N.A	|11	|18|	24|	31|	38|	51|	65|	79|	93	|107	|121	|135|
+SCS [kHz] |5 MHz|10 MHz|15 MHz|20 MHz|25 MHz|30 MHz | 40 MHz|50 MHz|60 MHz|70 MHz|80 MHz|90 MHz|100 MHz
+-|-|-|-|-|-|-|-|-|-|-|-|-|-
+||NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |NRB |
+15|25|52|79|106|133|160|216|270|N.A|N.A|N.A|N.A|N.A|
+30|11|24|38|51|65|78|106|133|162|189|217|245|273|
+60|N.A|11|18|24|31|38|51|65|79|93|107|121|135|
 
 ### Transmission bandwidth configuration NRB for FR2
 
-SCS [kHz]|	50 MHz|	100 MHz	|200 MHz|	400 MHz
-|-|-|-|-|-|-
-| |	NRB |	NRB |	NRB |	NRB |
-60	|66|	132	|264|	N.A
-120	|32	|66	|132	|264
+SCS [kHz]|50 MHz|100 MHz|200 MHz|400 MHz
+-|-|-|-|-
+| |NRB |NRB |NRB |NRB |
+60|66|132|264|N.A
+120|32|66|132|264
 
 ## radio frame
 
