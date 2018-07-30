@@ -6,6 +6,11 @@
     - [bandwidth](#bandwidth)
         - [Transmission bandwidth configuration NRB for FR1(below 6 GHz)](#transmission-bandwidth-configuration-nrb-for-fr1below-6-ghz)
         - [Transmission bandwidth configuration NRB for FR2](#transmission-bandwidth-configuration-nrb-for-fr2)
+    - [radio frame](#radio-frame)
+        - [SCS](#scs)
+        - [NR frame](#nr-frame)
+    - [Physical layer](#physical-layer)
+        - [Physical layer procedure](#physical-layer-procedure)
 ## 5G frequency Bands
 
 ### Lower 5G Bands in sub 6GHz
@@ -50,3 +55,38 @@ SCS [kHz]|	50 MHz|	100 MHz	|200 MHz|	400 MHz
 | |	NRB |	NRB |	NRB |	NRB |
 60	|66|	132	|264|	N.A
 120	|32	|66	|132	|264
+
+## radio frame
+
+### SCS
+![alt text](./SCS.png "scs")
+
+### NR frame
+* one radio frame: 10ms
+* one subframe: 1ms
+* number of slots per subframe: 2^u
+* number of symbols per slot: 14
+* A resource block is defined as 12 consecutive subcarriers in the frequency domain
+* common resource block: k/12, k is the index in the frequency domain.
+* 
+  
+![alt text](./frame.jpg "frame")
+
+## Physical layer
+
+The physical channels defined in the downlink are: 
+-	the Physical Downlink Shared Channel (PDSCH), 
+-	the Physical Downlink Control Channel (PDCCH), 
+-	the Physical Broadcast Channel (PBCH), 
+The physical channels defined in the uplink are: 
+-	the Physical Random Access Channel (PRACH),
+-	the Physical Uplink Shared Channel (PUSCH), 
+-	and the Physical Uplink Control Channel (PUCCH). 
+In addition, signals are defined as reference signals, primary and secondary synchronization signals.
+The modulation schemes supported are 
+-	in the downlink, QPSK, 16QAM, 64QAM, and 256QAM,
+-	in the uplink, QPSK, 16QAM, 64QAM and 256QAM for OFDM with a CP and π/2-BPSK, QPSK, 16QAM, 64QAM and 256QAM for DFT-s-OFDM with a CP
+
+### Physical layer procedure
+  
+scrambling -> modulation(xx QAM) -> layer mapping(1~8) -> antenna port mapping(precoding) -> mapping to virtual resource block -> mapping to physical resource block(OFDM symbol)
