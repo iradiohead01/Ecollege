@@ -35,7 +35,6 @@ node gNB {;
 node EPC;
 node eNB;
 node UE;
-;
 UE .- EPC: NAS;
 gNB .- eNB: X2;
 gNB -- UE: 5G-Uu(Uplane);
