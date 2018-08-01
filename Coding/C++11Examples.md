@@ -7,9 +7,12 @@
             - [std::function](#stdfunction)
         - [\<utility>](#utility)
             - [std::pair](#stdpair)
-    - [Key Words](#key-words)
+            - [std::move](#stdmove)
+            - [std::forword](#stdforword)
+    - [Key Words and Operator](#key-words-and-operator)
         - [auto](#auto)
         - [explicit](#explicit)
+        - [& and &&](#and)
 
 ## C++ STL
 
@@ -103,7 +106,41 @@ cout <<"The price of "<< product3.first <<" is $"<< product3.second <<"\n";
 return0;
 ```
 
-## Key Words
+#### std::move
+
+Move as rvalue. Returns an rvalue reference to arg.
+
+```C++
+{
+    std::list< std::string> tokens;
+    //skip initiallize...
+    std::list< std::string> t1 = tokens; //copy constructor called
+    std::list< std::string> t2 = std::move(tokens);  //move constructor called
+}
+```
+
+#### std::forword
+
+Returns an rvalue reference to arg if arg is not an lvalue reference.
+If arg is an lvalue reference, the function returns arg without modifying its type
+
+```C++
+void processValue(int& a){ cout << "lvalue" << endl; }
+void processValue(int&& a){ cout << "rvalue" << endl; }
+template <typename T>
+void forwardValue(T&& val)
+{
+    processValue(std::forward<T>(val));
+}
+void Testdelcl()
+{
+    int i = 0;
+    forwardValue(i); //Call void processValue(int& a)
+    forwardValue(0);//Call void processValue(int&& a)
+}
+```
+
+## Key Words and Operator
 
 ### auto
 
@@ -148,3 +185,74 @@ int main()
     foo(Bar(3)); // works either way
 }
 ```
+
+### & and &&
+
+- &: left value reference
+- &&: right value reference
+
+&& extend the life time of temp value, comepare below codes:
+```C++
+#include <iostream>
+using namespace std;
+
+int g_constructCount=0;
+int g_copyConstructCount=0;
+int g_destructCount=0;
+struct A
+{
+    A(){
+        cout<<"construct: "<<++g_constructCount<<endl;    
+    }
+    
+    A(const A& a)
+    {
+        cout<<"copy construct: "<<++g_copyConstructCount <<endl;
+    }
+    ~A()
+    {
+        cout<<"destruct: "<<++g_destructCount<<endl;
+    }
+};
+
+A GetA()
+{
+    return A();
+}
+```
+- copy construct called by =:
+```C++
+int main() {
+    A a = GetA();
+    return 0;
+}
+```
+Outputs:
+>construct: 1
+>
+>copy construct: 1
+>
+>destruct: 1
+>
+>copy construct: 2
+>
+>destruct: 2
+>
+>destruct: 3
+
+- Copy construct not called by =:
+```C++
+int main() {
+    A&& a = GetA();
+    return 0;
+}
+```
+Outputs:
+>construct: 1
+>
+>copy construct: 1
+>
+>destruct: 1
+>
+>destruct: 2
+>
