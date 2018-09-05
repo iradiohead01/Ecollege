@@ -10,6 +10,7 @@
     - [radio frame](#radio-frame)
         - [SCS](#scs)
         - [NR frame](#nr-frame)
+    - [channel mapping](#channel-mapping)
     - [Physical layer](#physical-layer)
         - [Physical layer procedure](#physical-layer-procedure)
 
@@ -105,6 +106,10 @@ SCS [kHz]|50 MHz|100 MHz|200 MHz|400 MHz
   
 ![alt text](./frame.jpg "frame")
 
+## channel mapping
+
+![alt text](./channel.png "channel")
+
 ## Physical layer
 
 The physical channels defined in the downlink are: 
@@ -123,3 +128,31 @@ The modulation schemes supported are
 ### Physical layer procedure
   
 scrambling -> modulation(xx QAM) -> layer mapping(1~8) -> antenna port mapping(precoding) -> mapping to virtual resource block -> mapping to physical resource block(OFDM symbol)
+
+![alt text](./phy0.png "phy")
+
+basic concept:
+
+- TB(transport block)
+  
+  Include one MAC PDU, sent in one TTI.
+
+- codeword:
+
+  1TB generate 1 codeword after CRC,Segmentation,coding and RM.
+
+- layer(transmission layer)
+  
+  1 or 2 codewords scrambling and modulation get complex module symbol mapping to multiple layers, each layer is one data stream. Layer number <= min(TX antenna port, RX antenna port). number of layer called rank
+
+- precoding:
+
+  layer(R) mapping to antenna port, using R\*P precoding martrix. *codebook* is collections of precoding martrixes.
+
+- antenna port:
+
+  logic concept, can be one or more real antenna. Each antenna port need one reference signal.
+
+- number relation:
+  
+  TB = codeword <= layer <= antenna port
